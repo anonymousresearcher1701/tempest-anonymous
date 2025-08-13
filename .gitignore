@@ -1,0 +1,13 @@
+.idea/
+.DS_Store
+__pycache__/
+
+cmake-build-debug/
+build/
+dist/
+wheelhouse/
+venv/
+.venv/
+
+*.so
+*.egg-info

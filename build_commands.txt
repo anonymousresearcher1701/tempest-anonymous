@@ -1,0 +1,28 @@
+# ASAN Flags
+
+# -DCMAKE_CXX_FLAGS="-fsanitize=address -g -O1"
+# -DCMAKE_C_FLAGS="-fsanitize=address -g -O1"
+# -DCMAKE_EXE_LINKER_FLAGS="-fsanitize=address"
+
+compute-sanitizer --tool memcheck cmake-build-debug/bin/test_run_tempest_2
+
+pip install -r requirements.txt
+python setup.py bdist_wheel
+
+# On Linux
+auditwheel repair dist/WHEEL_FILE_NAME --plat manylinux_2_39_x86_64
+
+
+# On Mac
+twine upload dist/*
+
+# On Windows after autowheel repair
+twine upload wheelhouse/*
+
+#Doc generation command
+doxygen
+python -m pdoc _tempest -o docs --force
+
+
+# Nsight Compute
+sudo /usr/local/cuda/bin/ncu --export report-ncp.rep cmake-build-debug/bin/test_run_tempest_2 data/sx-stackoverflow.csv
