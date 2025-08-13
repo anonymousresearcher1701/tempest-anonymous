@@ -74,11 +74,3 @@ pip install tempest-anonymous
 
 📌 **[C++ Documentation →](https://htmlpreview.github.io/?https://github.com/anonymousresearcher1701/tempest-anonymous/blob/master/docs/html/classTempest.html)**<br>
 📌 **[Python Interface Documentation →](docs/_tempest.md)**
-
----
-
-## 📚 Inspired By
-
-**Nguyen, Giang Hoang, et al.**  
-*"Continuous-Time Dynamic Network Embeddings."*  
-*Companion Proceedings of The Web Conference 2018.*
